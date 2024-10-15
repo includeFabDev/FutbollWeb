@@ -1,0 +1,17 @@
+mixin post-nikki(obj)
+    // Post Nikki
+    article.post.post-nikki( class= obj.mod )&attributes(attributes)
+        .unit.unit-spacing-lg( class= obj.unit )
+            .unit-left: a.post-nikki-figure(href='#'): +jpg( obj.img )
+            .unit-body
+                .post-nikki-time: time( datetime= obj.time.datetime )= obj.time.dateText
+                .post-nikki-title: a(href='#')=obj.title
+
+mixin post-nikki-2(obj)
+    // Post Nikki 2
+    article.post.post-nikki.post-nikki-2( class= obj.mod )&attributes(attributes)
+        .post-nikki-figure: +jpg( obj.img )
+        .post-nikki-body: div
+            .post-nikki-time: time( datetime= obj.time.datetime )= obj.time.dateText
+            .post-nikki-title: a(href='#')=obj.title
+            .post-nikki-content: p= obj.content

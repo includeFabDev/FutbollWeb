@@ -1,0 +1,53 @@
+extends  ../_skeleton
+
+
+block variables
+	- pageName = 'Gallery'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: 'Gallery'
+	})
+	='\n'
+
+
+	//Gallery
+	section.section.section-lg.bg-default.novi-bg.novi-bg-img
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 Gallery
+					p.custom-title.mt-1 Featured team photos
+
+				.col-12
+					.row.row-50.row-lg-60( data-isotope-layout='masonry', data-column-class='.col-1', data-lightgallery='group', data-lg-animation='lg-zoom-in' )
+						.col-xs-6.col-lg-5.mt-sm-4( data-filter='0' )
+							+product({
+								img: 'home-02-500x500',
+								imgOriginal: 'home-02-1200x800',
+							})
+						.col-xs-6.col-lg-5.d-flex.align-items-end( data-filter='1' )
+							+product({
+								img: 'home-03-500x390',
+								imgOriginal: 'home-03-1200x800',
+							})
+						.col-xs-6.col-sm-4.offset-lg-2( data-filter='3' )
+							+product({
+								img: 'home-05-390x600',
+								imgOriginal: 'home-05-800x1200',
+							})
+						.col-xs-6.col-lg-5( data-filter='2' )
+							+product({
+								img: 'home-04-500x500',
+								imgOriginal: 'home-04-1200x800',
+							})
+
+
+	hr
+
+
+	// Page Footer
+	include ../sections/_footer

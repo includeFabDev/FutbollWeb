@@ -1,0 +1,153 @@
+/** @section Thumbnails */
+.image-default {
+	display: block;
+	width: 100%;
+
+	@include media-breakpoint-down(sm) {
+		img {
+			max-width: 360px;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+/*
+*
+* Thumbnail classic with icon
+*----------------------------------------------------
+ */
+
+.thumbnail-classic {
+	* + .divider {
+		margin-top: 20px;
+	}
+
+	span {
+		position: relative;
+	}
+
+	.thumbnail-classic-icon {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&:hover {
+		.thumbnail-classic-icon {
+			color: $white;
+
+			&:before {
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				opacity: 1;
+				box-shadow: 0 8px 29px rgba(#3f0966, .25);
+			}
+
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+
+	@media (min-width: 768px) and (max-width: 991px) {
+		&.unit-sm-horizontal {
+			text-align: left;
+
+			.thumbnail-classic-caption {
+				margin-top: 0;
+			}
+		}
+	}
+	@media (min-width: 992px) and (max-width: 1199px) {
+		&.unit-md-horizontal {
+			text-align: left;
+
+			.thumbnail-classic-caption {
+				margin-top: 0;
+			}
+		}
+	}
+
+}
+
+.thumbnail-classic-icon {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	transition: 450ms ease-in-out;
+	color: $primary;
+	font-weight: 400;
+
+	&:before,
+	&:after {
+		position: absolute;
+		content: "";
+		display: inline-block;
+		border-radius: 50%;
+		transition: 450ms ease-in-out;
+	}
+
+	&:after {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border: 2px solid $gray-200;
+		pointer-events: none;
+	}
+
+	&:before {
+		top: 50%;
+		bottom: 50%;
+		left: 50%;
+		right: 50%;
+		opacity: 0;
+		background: $primary;
+	}
+
+	.icon {
+		font-size: 40px;
+	}
+}
+
+.thumbnail-classic-secondary {
+	.thumbnail-classic-text {
+		letter-spacing: .02em;
+		color: $gray-500;
+		opacity: 1;
+	}
+
+	.divider {
+		background: $primary;
+	}
+}
+
+.thumbnail-classic-caption {
+	margin-top: 15px;
+	padding-left: 15px;
+	@include media-breakpoint-up(md) {
+		padding-right: 15px;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.thumbnail-classic-caption {
+		margin-top: 20px;
+
+		* + .divider {
+			margin-top: 30px;
+		}
+
+		.divider + p {
+			margin-top: 30px;
+		}
+	}
+}

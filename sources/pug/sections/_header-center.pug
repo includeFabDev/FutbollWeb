@@ -1,0 +1,52 @@
+header.section.page-header
+	// RD Navbar
+	.rd-navbar-wrap.rd-navbar-centered
+		nav.rd-navbar(
+			data-layout=             'rd-navbar-fixed',
+			data-sm-layout=          'rd-navbar-fixed',
+			data-md-layout=          'rd-navbar-fixed',
+			data-lg-layout=          'rd-navbar-fixed',
+			data-xl-layout=          'rd-navbar-static',
+			data-xxl-layout=         'rd-navbar-static',
+			data-xxxl-layout=        'rd-navbar-static',
+
+			data-lg-device-layout=   'rd-navbar-fixed',
+			data-xl-device-layout=   'rd-navbar-static',
+			data-xxl-device-layout=  'rd-navbar-static',
+			data-xxxl-device-layout= 'rd-navbar-static',
+
+			data-stick-up-offset=      '1px',
+			data-sm-stick-up-offset=   '1px',
+			data-md-stick-up-offset=   '1px',
+			data-lg-stick-up-offset=   '1px',
+			data-xl-stick-up-offset=   '1px',
+			data-xxl-stick-up-offset=  '1px',
+			data-xxx-lstick-up-offset= '1px',
+
+			data-stick-up=           'true'
+		)
+			.rd-navbar-inner
+				// RD Navbar Panel
+				.rd-navbar-panel
+					// RD Navbar Toggle
+					button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+					// RD Navbar Brand
+					.rd-navbar-brand
+						+logo
+
+				.rd-navbar-nav-wrap
+					+navigation( menu )
+
+				.rd-navbar-collapse-toggle(data-rd-navbar-toggle='.rd-navbar-collapse'): span
+				.rd-navbar-aside-right.rd-navbar-collapse
+					.rd-navbar-social
+						.rd-navbar-social-text Follow us
+						+list-inline-icon({
+							list_class: 'list-inline',
+							items: [
+								"icon-default icon-custom-facebook",
+								'icon-default icon-custom-linkedin',
+								'icon-default icon-custom-instagram'
+							]
+						})

@@ -1,0 +1,126 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../components/progress-circle
+
+block variables
+	- pageName = 'Single page'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: 'Team Member'
+	})
+	='\n'
+	
+	// Ronald Chen
+	section.section.section-lg.bg-default.text-start.novi-bg.novi-bg-img
+		.container
+			.row.row-70.row-ten.row-fix.justify-content-xl-between
+				.col-xl-3
+					.row.row-70.row-fix.align-items-md-center
+						.col-md-6.col-xl-12
+							+jpg('team-member-1-420x420')
+						.col-md-6.col-xl-12.text-md-start
+							h6 Get in Touch
+							- contactFormCounter += 1
+							// RD Mailform
+							form.rd-mailform(data-form-output="form-output-global", data-form-type='contact', method='post', action='bat/rd-mailform.php')
+								.row.row-20.row-fix
+									.col-md-12
+										.form-wrap.form-wrap-validation
+											label.form-label-outside(for='form-' + contactFormCounter + '-name') First name
+											input.form-input(id='form-' + contactFormCounter + '-name' type="text" name="name" data-constraints='@Required')
+									.col-md-12
+										.form-wrap.form-wrap-validation
+											label.form-label-outside(for='form-' + contactFormCounter + '-email') E-mail
+											input.form-input(id='form-' + contactFormCounter + '-email' type="email" name="email" data-constraints="@Email @Required")
+									.col-sm-12
+										.form-wrap.form-wrap-validation
+											label.form-label-outside(for='form-' + contactFormCounter + '-message') Message
+											textarea.form-input(id='form-' + contactFormCounter + '-message' name="message" data-constraints="@Required")
+									
+									.col-sm-12.offset-custom-4
+										.form-button
+											button.button.button-primary.button-nina(type='submit') Send message
+				
+				.col-xl-6
+					.row.row-120.row-fix
+						.col-sm-12
+							.heading-5 Midfielder
+							h3 Roberto Firmino
+							.divider.divider-default
+							p.text-spacing-sm
+								| Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+							.row.text-center.row-lg.row-30.justify-content-center
+								.col-auto.col-sm-4
+									+progress-circle({
+										title: 'Passing',
+										value: 75,
+										valueClass: 'radial'
+									})
+								.col-auto.col-sm-4
+									+progress-circle({
+										title:      'Shooting',
+										value:      50,
+										valueClass: 'radial'
+									})
+								.col-auto.col-sm-4
+									+progress-circle({
+										title:      'Ball Control',
+										value:      69,
+										valueClass: 'radial'
+									})
+						.col-sm-12
+							.row.row-70
+								.col-md-6
+									h6 Skills
+									p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolore dolorem ea esse illum quia.
+								.col-md-6
+									h6 Awards
+									ul.list.list-xxs.text-spacing-sm
+										li 2021 - Best Midfielder
+										li 2018 - Best Forward
+										li 2017 - Best Goalkeeper
+								.col-md-6
+									h6 Certificates
+									ul.list.list-xxs.text-spacing-sm
+										li 2021 - National Soccer Championship
+										li 2019 - UEFA European League
+										li 2017 - US Youth Soccer Championship
+								.col-md-6
+									h6 Contact information
+									ul.list-xs
+										li.box-inline.box-inline-gray
+											span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+											div
+												a(href='#') 2130 Fulton Street, San Diego, CA
+													br
+													| 94117-1080 USA
+										
+										li.box-inline.box-inline-gray
+											span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+											ul.list-comma
+												li: a(href='tel:#') 1-800-1234-567
+										
+										li
+											ul.inline-list-xs
+												li
+													a.icon.novi-icon.icon-sm-bigger.icon-gray-1.mdi.mdi-facebook(href='#')
+												li
+													a.icon.novi-icon.icon-sm-bigger.icon-gray-1.mdi.mdi-twitter(href='#')
+												li
+													a.icon.novi-icon.icon-sm-bigger.icon-gray-1.mdi.mdi-instagram(href='#')
+												li
+													a.icon.novi-icon.icon-sm-bigger.icon-gray-1.mdi.mdi-google(href='#')
+												li
+													a.icon.novi-icon.icon-sm-bigger.icon-gray-1.mdi.mdi-linkedin(href='#')
+	='\n'
+
+	hr
+
+	// Page Footer
+	include ../sections/_footer

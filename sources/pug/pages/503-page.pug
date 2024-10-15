@@ -1,0 +1,81 @@
+extends  ../_skeleton
+
+block variables
+	- pageName = '503 page'
+
+//- Page
+block page
+	section.section
+		//Page Header
+		header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap( data-preset!={
+			title: 'Intro slider with nav 3',
+			category: 'intro, navigation, slider',
+			reload: true,
+			id: 'intro-slider-with-nav-3'
+		} )
+			.rd-navbar-wrap.rd-navbar-default
+				nav.rd-navbar(
+					data-layout=             'rd-navbar-fixed',
+					data-sm-layout=          'rd-navbar-fixed',
+					data-md-layout=          'rd-navbar-fixed',
+					data-lg-layout=          'rd-navbar-fixed',
+					data-xl-layout=          'rd-navbar-static',
+					data-xxl-layout=         'rd-navbar-static',
+					data-xxxl-layout=        'rd-navbar-static',
+
+					data-lg-device-layout=   'rd-navbar-fixed',
+					data-xl-device-layout=   'rd-navbar-static',
+					data-xxl-device-layout=  'rd-navbar-static',
+					data-xxxl-device-layout= 'rd-navbar-static',
+
+					data-stick-up-offset=      '1px',
+					data-sm-stick-up-offset=   '1px',
+					data-md-stick-up-offset=   '1px',
+					data-lg-stick-up-offset=   '1px',
+					data-xl-stick-up-offset=   '1px',
+					data-xxl-stick-up-offset=  '1px',
+					data-xxx-lstick-up-offset= '1px',
+
+					data-stick-up=           'true'
+				)
+					.rd-navbar-inner.rd-navbar-padding-inner
+						// RD Navbar Panel
+						.rd-navbar-panel
+							// RD Navbar Toggle
+							button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+							// RD Navbar Brand
+							.rd-navbar-brand
+								+logo
+
+						.rd-navbar-aside-right
+							.rd-navbar-nav-wrap
+								+navigation( menu )
+							.rd-navbar-aside-right-inner
+								// RD Navbar Search
+								.rd-navbar-search
+									a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+										span
+									form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+										div.form-wrap
+											label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+											input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+											#rd-search-results-live.rd-search-results-live
+										button.rd-search-form-submit.mdi.mdi-magnify
+
+		section.fullwidth-page.bg-image.bg-image-9.novi-bg.novi-bg-img
+			.fullwidth-page-inner
+				.section-md.text-center
+					.container
+						p.breadcrumbs-custom-subtitle Service is Temporary Unavailable
+						p.heading-1.breadcrumbs-custom-title Error 503
+						p Sorry, we're offline right now to make our site even better. #[br.d-none.d-md-inline]Please, come back later and check what we've been up to.
+						.group-md.button-group
+							a(href='index.html').button.button-primary.button-nina Back to home page
+							a(href='contacts.html').button.button-dark.button-nina Contact us
+
+
+				// Page Footer
+				.section-xs.page-footer.text-center
+					.container
+						+rights

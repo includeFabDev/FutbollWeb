@@ -1,0 +1,113 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+
+block variables
+	- pageName = 'About Us'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: 'Who We Are'
+	})
+	='\n'
+	
+	// hi, we are brave
+	section.section.section-lg.bg-default.novi-bg.novi-bg-img
+		.container
+			.row.row-ten.row-50.justify-content-md-center.align-items-lg-center.justify-content-xl-between.flex-lg-row-reverse
+				.col-md-8.col-lg-5.col-xl-4
+					h3 Who we are
+					p.heading-5 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru.
+					p.text-spacing-sm Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
+					a.button.button-primary.button-nina(href='#') Learn more
+				.col-md-8.col-lg-5
+					+jpg('about-us-01-570x535')
+	="\n"
+	
+	// Small Features
+	section.section.section-lg.bg-gray-100.novi-bg.novi-bg-img( data-preset!={title: 'Services 1', category: 'services', reload: false, id: 'services-1'} )
+		.container-wide
+			.row.row-50.justify-content-sm-center.text-gray-light
+				.col-sm-10.col-md-6.col-xl-3
+					article.box-minimal
+						.box-minimal-header
+							.box-minimal-icon.box-minimal-icon-lg.novi-icon.mdi.mdi-thumb-up-outline
+							h6.box-minimal-title Individual approach
+						p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.
+				.col-sm-10.col-md-6.col-xl-3
+					article.box-minimal
+						.box-minimal-header
+							.box-minimal-icon.box-minimal-icon-lg.novi-icon.mdi.mdi-account-multiple
+							h6.box-minimal-title Qualified instructors
+						p Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.
+				.col-sm-10.col-md-6.col-xl-3
+					article.box-minimal
+						.box-minimal-header
+							.box-minimal-icon.box-minimal-icon-lg.novi-icon.mdi.mdi-headset
+							h6.box-minimal-title 24/7 online support
+						p Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.
+				.col-sm-10.col-md-6.col-xl-3
+					article.box-minimal
+						.box-minimal-header
+							.box-minimal-icon.box-minimal-icon-lg.novi-icon.mdi.mdi-credit-card
+							h6.box-minimal-title Payment Methods
+						p Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+	="\n"
+
+	// Our history
+	section.section.section-lg.bg-default
+		.container
+			h3 Our history
+			.row.row-ten.row-50.justify-content-sm-center.justify-content-xl-between
+				.col-sm-9.col-md-12.col-xl-6
+					p.text-gray-light At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+					.time-line-vertical.inset-md
+						.time-line-vertical-element
+							.unit.unit-sm.flex-column.flex-md-row.unit-spacing-xxl
+								.unit-left
+									.time-line-time
+										time.wow.fadeInLeft(data-wow-delay=".0s" datetime='2020') April 2010
+								.unit-body
+									.time-line-content.wow.fadeInRight(data-wow-delay=".1s")
+										h5 Gathering a team of highly trained soccer players and top-notch coaches
+										p Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.
+						
+						.time-line-vertical-element
+							.unit.flex-column.flex-md-row.unit-spacing-xxl
+								.unit-left
+									.time-line-time
+										time.wow.fadeInLeft(data-wow-delay=".1s" datetime='2020') September 2015
+								.unit-body
+									.time-line-content.wow.fadeInRight(data-wow-delay=".2s")
+										h5 Taking part in national championships
+										p Omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae
+						
+						.time-line-vertical-element
+							.unit.flex-column.flex-md-row.unit-spacing-xxl
+								.unit-left
+									.time-line-time
+										time.wow.fadeInLeft(data-wow-delay=".2s" datetime='2020') March 2021
+								.unit-body
+									.time-line-content.wow.fadeInRight(data-wow-delay=".3s")
+										h5 Celebrating 11 years of our soccer team
+										p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+				
+				.col-sm-9.col-md-12.col-xl-3
+					.row.row-30
+						.col-md-6.col-xl-12.wow.fadeInUp(data-wow-delay='.1s')
+							+jpg('about-us-2-420x280')
+						.col-md-6.col-xl-12.wow.fadeInUp(data-wow-delay='.2s')
+							+jpg('about-us-3-420x280')
+						.col-md-6.col-xl-12.wow.fadeInUp(data-wow-delay='.3s')
+							+jpg('about-us-4-420x280')
+	="\n"
+
+
+	include ../sections/_cta
+
+	// Page Footer
+	include ../sections/_footer

@@ -1,0 +1,181 @@
+/** @section Utilities custom */
+
+
+// Images
+img {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+}
+
+// Image custom position
+//==============================
+.image-position-01 {
+	@include media-breakpoint-up(xxxl) {
+		margin-top: 10px;
+		margin-bottom: -60px;
+	}
+}
+
+/**
+* Blick
+*/
+.blick-wrap {
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+
+	> img {
+		pointer-events: none;
+	}
+}
+
+.blick-overlay,
+.blick-content {
+	position: absolute;
+}
+
+.blick-overlay {
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 32.16%;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+
+	&[data-blick-overlay='ipad'] {
+		background-image: url(../images/blick-01.png);
+	}
+}
+
+.blick-content {
+	position: absolute;
+	overflow: hidden;
+	top: 4.3%;
+	bottom: 39.5%;
+	left: 4.1%;
+	right: 4.1%;
+
+	img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	&[data-blick-content='ipad'] {
+		top: 5.1%;
+		bottom: 5.1%;
+		left: 6.9%;
+		right: 6.95%;
+	}
+
+	&[data-blick-content='iphone'] {
+		top: 11.2%;
+		bottom: 17.7%;
+		left: 14.1%;
+		right: 17.6%;
+	}
+}
+
+.ie-10,
+.ie-11 {
+	.blick-wrap {
+		> img {
+			width: 100%;
+		}
+	}
+}
+
+// Fullwidth page
+.fullwidth-page {
+	position: relative;
+	min-height: calc(100vh - 56px);
+	display: flex;
+	align-items: stretch;
+
+	&-inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		width: 100%;
+
+		> * {
+			position: relative;
+			width: 100%;
+		}
+
+		> *:nth-child(1) {
+
+		}
+	}
+
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: "";
+		display: inline-block;
+		background-color: rgba($black, .4);
+	}
+
+	&[class*='bg-gradient'] {
+		&:before {
+			content: none;
+		}
+	}
+
+	.desktop & {
+		@include media-breakpoint-up(lg) {
+			min-height: 100vh;
+			> *:nth-child(1) {
+				padding-top: 180px;
+			}
+		}
+		@include media-breakpoint-up(xxl) {
+			> *:nth-child(1) {
+				padding-top: 90px;
+			}
+		}
+	}
+
+	* + .button {
+		margin-top: 30px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 100vh;
+	}
+
+	@include media-breakpoint-up(xxl) {
+		* + .breadcrumbs-custom-title {
+			margin-top: 25px;
+		}
+		.heading-1 + p {
+			margin-top: 33px;
+		}
+		.button {
+			margin-top: 50px;
+		}
+		* + .countdown-wrap,
+		.countdown-wrap + * {
+			margin-top: 40px;
+		}
+	}
+
+	.ie-10 &,
+	.ie-11 &,
+	.ie-edge & {
+		.fullwidth-page-inner {
+			min-height: 100vh;
+		}
+	}
+}

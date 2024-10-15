@@ -1,0 +1,64 @@
+.container
+	.row
+		h6.custom-subtitle-1 our team
+		p.custom-title.mt-1 Our best players
+	.row.row-sm.row-40.row-lg-50
+		.col
+			.swiper-container.swiper-1(
+				data-swiper!= {
+					loop: false,
+					simulateTouch: true,
+					lazy: true,
+					autoplay: {
+						delay: 50000000
+					},
+					breakpoints: {
+						576: {
+							slidesPerView: 2,
+							spaceBetween: 50,
+						},
+						768: {
+							slidesPerView: 3,
+							spaceBetween: 50
+						},
+					},
+					pagination: {
+						el: '.swiper-pagination',
+						type: 'progressbar',
+					}
+				}
+			)
+				.swiper-wrapper
+					+team-default({
+						img: 'player-10-390x430',
+						title: 'David Totti',
+						meta: 'Defender',
+						number: '9'
+					})
+					+team-default({
+						img: 'player-11-390x430',
+						title: 'Roberto Firmino',
+						meta: 'Midfielder',
+						number: '4'
+					})
+					+team-default({
+						img: 'player-12-390x430',
+						title: 'Joe Gomez',
+						meta: 'Attacker',
+						number: '7'
+					})
+					+team-default({
+						img: 'player-13-390x430',
+						title: 'John Moore',
+						meta: 'Forward',
+						number: '12'
+					})
+					+team-default({
+						img: 'player-14-390x430',
+						title: 'Henry Jones',
+						meta: 'Goalkeeper',
+						number: '8'
+					})
+
+				//Swiper Pagination
+				.swiper-pagination

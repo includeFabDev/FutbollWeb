@@ -1,0 +1,30 @@
+extends  ../_skeleton
+
+//- Includes
+include ../sections/_cards
+
+block variables
+	- pageName = 'FAQs'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: "Ask us"
+	})
+	
+	// Standard Accordion
+	section.section.section-lg.bg-default.text-center
+		.container
+			.row.row-50.justify-content-lg-center
+				.col-lg-10.col-xl-8
+					h3 FAQs
+					+accordion-corporate({
+						accordionId: 'accordion1'
+					})
+
+	hr
+
+	// Page Footer
+	include ../sections/_footer

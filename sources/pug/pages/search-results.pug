@@ -1,0 +1,34 @@
+extends  ../_skeleton
+
+block variables
+  - pageName = 'Search Results'
+
+//- Page
+block page
+  include ../sections/_header-center
+  // Page Header
+  +breadcrumbs-header({
+    text: "Easy Search"
+  })
+
+  //Search results
+  section.section.section-lg.bg-default
+    // section wave
+    +wave()
+    .container-wide
+      .row.justify-content-center
+        .col-lg-9.col-xxl-6
+          form.rd-search.rd-mailform-inline.rd-mailform-sm.rd-mailform-inline-modern(action="search-results.html" method="GET")
+            .rd-mailform-inline-inner
+              div.form-wrap
+                label.form-label(for="rd-navbar-search-form-input-1" class="form-label") Search...
+                input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off")
+              button.rd-search-form-submit.button.button-primary search
+
+          .rd-search-results
+  ="\n"
+
+  hr
+
+  // Page Footer
+  include ../sections/_footer

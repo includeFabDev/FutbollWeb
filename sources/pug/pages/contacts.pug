@@ -1,0 +1,68 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_contact-form
+include ../elements/_ui-maps
+
+block variables
+	- pageName = 'Contacts'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: "Get in Touch with Us"
+	})
+	='\n'
+	
+	// Contact information
+	section.section.section-lg.bg-default
+		.container
+			.row.row-ten.row-50.justify-content-md-center.justify-content-xl-between
+				.col-md-9.col-lg-6
+					h3 Contact us
+					hr.divider.divider-left.divider-default
+					p.big You can contact us any way that is convenient for you. We are available 24/7 via fax or email. You can also use a quick contact form below or visit our office personally.
+					+contact-form
+				
+				.col-md-9.col-lg-4.col-xl-3: .column-aside
+					.row
+						.col-sm-10.col-md-6.col-lg-12
+							h6 Address
+							hr.divider-thin
+							article.box-inline
+								span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-map-marker
+								span: a(href='#') 2130 Fulton Street, Chicago, IL #[br.d-none.d-xl-block] 94117-1080 USA
+						.col-sm-10.col-md-6.col-lg-12
+							h6 Phone
+							hr.divider-thin
+							article.box-inline
+								span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-phone
+								ul.list-comma
+									li: a(href='tel:#') 1-800-6543-765
+									li: a(href='tel:#') 1-800-3434-876
+						
+						.col-sm-10.col-md-6.col-lg-12
+							h6 E-mail
+							hr.divider-thin
+							article.box-inline
+								span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-email-open
+								span: a(href='mailto:#') mail@demolink.org
+						
+						.col-sm-10.col-md-6.col-lg-12
+							h6 Opening hours
+							hr.divider-thin
+							article.box-inline
+								span.icon.novi-icon.icon-md-smaller.icon-primary.mdi.mdi-calendar-clock
+								ul.list-0
+									li Mon–Fri: 9:00 am–6:00 pm
+									li Sat–Sun: 11:00 am–4:00 pm
+	='\n'
+	
+	section.section( data-preset!={title: 'Map fullwidth', category: 'maps', reload: true, id: 'map-fullwidth'} )
+		+map-default.google-map-with-icon.google-map-default.google-map-sm
+	="\n"
+
+	// Page Footer
+	include ../sections/_footer

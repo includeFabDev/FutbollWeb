@@ -1,0 +1,75 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-team-classic
+include ../components/progress-circle
+
+block variables
+	- pageName = 'Our Team'
+
+//- Page
+block page
+	include ../sections/_header-center
+	// Page Header
+	+breadcrumbs-header({
+		text: 'Our team'
+	})
+	='\n'
+	
+	// Team
+	section.section.section-lg.novi-bg.novi-bg-img.bg-default
+		.container
+			.row.row-40.row-xl-50
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'home-10-260x345',
+						title: 'David Totti',
+						meta: 'Defender'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'home-11-260x345',
+						title: 'Roberto Firmino',
+						meta: 'Midfielder'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'home-12-260x345',
+						title: 'Joe Gomez',
+						meta: 'Attacker'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'home-13-260x345',
+						title: 'John Moore',
+						meta: 'Forward'
+					})
+
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'team-05-260x345',
+						title: 'Henry Jones',
+						meta: 'Goalkeeper'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'team-06-260x345',
+						title: 'Edward Adams',
+						meta: 'Center Back'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'team-07-260x345',
+						title: 'Jack Peters',
+						meta: 'Winger'
+					})
+				.col-sm-6.col-xl-3
+					+team-default({
+						img: 'team-08-260x345',
+						title: 'Dwayne Smith',
+						meta: 'Left Fullback'
+					})
+	hr
+
+	// Page Footer
+	include ../sections/_footer

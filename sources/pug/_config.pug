@@ -1,0 +1,59 @@
+-
+	var
+		htmlClass = [ 'wide', 'wow-animation' ],
+		fonts = "//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap",
+
+		logo = {
+			default:   'logo-default-172x36.png',
+			inverse:   'logo-inverse-172x36.png',
+			name:      'Learol'
+		},
+
+		links = {
+			about: 'about-us.html',
+			post: 'blog-post.html'
+		},
+
+		menu = [
+			{
+				title: 'Home',
+				link: 'index.html'
+			},
+			{
+				title: 'About us'
+			},
+			{
+				title: 'Our team',
+				dropdown: [
+					{ title: 'Single page' }
+				]
+			},
+			{
+				title: 'Gallery'
+			},
+			{
+				title: 'Pages',
+				link: '#',
+				dropdown: [
+					{ title: 'FAQs' },
+					{ title: 'Privacy policy' },
+					{ title: '404 page' },
+					{ title: '503 page' },
+					{ title: 'Buttons' },
+					{ title: 'Forms' },
+					{ title: 'Grid system' },
+					{ title: 'Tables' },
+					{ title: 'Typography' },
+				]
+			},
+			{
+				title: 'Contacts'
+			}
+		],
+
+		// Predefined variables
+		breadcrumbs = [],
+		pageName = 'Home',
+		counter = 0,
+		contactFormCounter = 0,
+		subscribeFormCounter = 0;

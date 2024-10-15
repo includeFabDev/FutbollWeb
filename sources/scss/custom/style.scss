@@ -1,0 +1,132 @@
+/**
+ * [Table of contents]
+ *   1 Page layout
+ *   2 Reset Styles
+ *   3 Utilities custom
+ *   4 Grid modules
+ *   5 Preloader
+ *   6 Backgrounds
+ *   7 Boxes
+ *   8 Breadcrumbs
+ *   9 Buttons
+ *   10 Call To Action
+ *   11 Footers
+ *   12 Footers
+ *   13 Forms
+ *   14 Icons
+ *   15 Links
+ *   16 Lists
+ *   17 Pricing Table
+ *   18 Quotes
+ *   19 Snackbars
+ *   20 Table custom
+ *   21 Team
+ *   22 Thumbnails
+ *   23 Time Line Styles
+ *   24 Typography
+ *   25 Novi
+ *   26 Product
+ *   27 Text styling
+ *   28 Sections
+ *   29 Offsets
+ *   30 Decorations
+ *   31 Grid modules
+ *   32 Flex Grid system
+ *   33 Responsive unit
+ *   34 Animate
+ *   35 Counter
+ *   36 Owl Carousel
+ *   37 RD Navbar
+ *   38 ToTop
+ *   39 Progress Bars
+ *   40 Circle Progress Bars
+ *   41 Parallax js
+ *   42 jPlayer
+ *   43 Accordion custom
+ *   44 Google Map
+ *   45 Swiper
+ *   46 Lightgallery
+ *   47 Material Parallax
+ *   48 Search Results
+ */
+
+// Bootstrap
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+
+
+// Base
+@import "base/variables";
+@import "base/page";
+@import "base/reset";
+
+// Mixins
+@import 'mixins/functions';
+@import 'mixins/mixins';
+@import 'mixins/vendors';
+@import 'mixins/flex-grid-framework';
+@import 'mixins/visibility-utilities';
+@import 'mixins/buttons';
+@import 'mixins/groups';
+@import 'mixins/unit';
+@import 'mixins/range-spacing';
+@import 'mixins/grid';
+
+// Utilities
+@import 'utilities/other';
+@import 'utilities/grid-modules';
+
+// Components
+@import "components/preloader";
+@import "components/backgrounds";
+@import "components/boxes";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/call-to-action";
+@import "components/footers";
+@import "components/forms";
+@import "components/icons";
+@import "components/links";
+@import "components/lists";
+@import "components/pricing";
+@import "components/quotes";
+@import "components/snackbars";
+@import "components/tables";
+@import "components/team";
+@import "components/thumbnails";
+@import "components/time-line";
+@import "components/type-custom";
+@import "components/novi";
+@import "components/product";
+@import "components/posts";
+
+// Helpers
+@import "helpers/text-styling";
+@import "helpers/groups";
+@import "helpers/sections";
+@import "helpers/offsets";
+@import "helpers/decorations";
+@import "helpers/grid-modules";
+
+// Modules
+@import "modules/flex-grid";
+@import "modules/unit-responsive";
+
+// Plugins
+@import "plugins/animate";
+@import "plugins/counter";
+@import "plugins/owl-carousel";
+@import "plugins/rd-navbar";
+@import "plugins/ui-to-top";
+@import "plugins/progress-bars";
+@import "plugins/jquery-circle-progress";
+@import "plugins/parallax-js";
+@import "plugins/jPlayer";
+@import "plugins/accordion-custom";
+@import "plugins/google-map";
+@import "plugins/swiper";
+@import "plugins/lightgallery";
+@import "plugins/material-parallax";
+@import "plugins/rd-search";
+

@@ -1,0 +1,175 @@
+/** @section Icons */
+
+/**
+* Base styles
+*/
+
+.icon {
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+
+  &:before {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/**
+* Alternate styles
+*/
+.page {
+  .icon-default { color: $body-color; }
+  
+  .icon-white { color: $white; }
+
+  .icon-gray { color: $gray-500; }
+  
+  .icon-gray-1 { color: $gray-300; }
+  
+  .icon-gray-light { color: $gray-500; }
+
+  .icon-darker { color: $gray-700; }
+
+  .icon-dark { color: $dark; }
+
+  .icon-primary { color: $primary; }
+
+  // Icon filled
+  .icon-filled {
+    color: $white;
+    background: $gray-700;
+
+    &[class*='facebook'] {
+      background: $facebook;
+    }
+
+    &[class*='twitter'] {
+      background: $twitter;
+    }
+
+    &[class*='instagram'] {
+      background: $instagram;
+    }
+
+    &[class*='google'] {
+      background: $google;
+    }
+
+    &[class*='linkedin'] {
+      background: $linkedin;
+    }
+  }
+
+  // Link icon
+  a {
+    &.icon-default {
+      &:hover { color: $primary; }
+    }
+
+    &.icon-darker {
+      &:hover { color: $primary; }
+    }
+    
+    &.icon-gray-1 {
+      &:hover { color: $primary; }
+    }
+
+    // Icon filled
+    &.icon-filled {
+      &[class*='facebook'] {
+        &:hover { background: $facebook-darken; }
+      }
+
+      &[class*='twitter'] {
+        &:hover { background: $twitter-darken; }
+      }
+
+      &[class*='instagram'] {
+        &:hover { background: darken($instagram, 10%); }
+      }
+
+      &[class*='google'] {
+        &:hover { background: $google-darken; }
+      }
+
+      &[class*='linkedin'] {
+        &:hover { background: darken($linkedin, 10%); }
+      }
+    }
+  }
+}
+
+/**
+* Icon sizes
+*/
+
+.page {
+  
+  .icon-sm-bigger { font-size: 22px; }
+
+  .icon-md-smaller { font-size: 20px; }
+  
+  .icon-md-middle { font-size: 24px; } //
+  
+  .icon-md { font-size: 27px; }
+  
+  .icon-md-big { font-size: 36px;  }
+  
+  .icon-lg {
+    font-size: 62px;
+    line-height: 62px;
+  }
+  
+  @include media-breakpoint-up(xxl) {
+    .icon-sm-bigger { font-size: 22px; }
+  
+    .icon-md-smaller { font-size: 23px; }
+  
+    .icon-md-middle { font-size: 24px; } //
+  
+    .icon-md { font-size: 27px; }
+  
+    .icon-md-big { font-size: 36px;  }
+  
+    .icon-lg {
+      font-size: 62px;
+      line-height: 62px;
+    }
+  }
+}
+
+/**
+* Icon shapes
+*/
+.icon-circle { border-radius: 100%; }
+
+.icon.icon-circle {
+  width: 1.75em;
+  height: 1.75em;
+  line-height: 1.75em;
+
+  @include media-breakpoint-up(md) {
+    width: 1.9em;
+    height: 1.9em;
+    line-height: 1.9em;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: 2.25em;
+    height: 2.25em;
+    line-height: 2.25em;
+  }
+}
+
+.icon.icon-round {
+  border-radius: 4px;
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.2em;
+}

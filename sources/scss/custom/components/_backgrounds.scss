@@ -1,0 +1,182 @@
+/** @section Backgrounds */
+
+%context-dark {
+	color: $white;
+
+	#{headings()} {
+		color: $white;
+	}
+
+	// Heading decorated
+	.breadcrumbs-custom-title {
+		&::before,
+		&::after {
+			background: $white;
+		}
+	}
+
+	// List
+	.list-marked a {
+		color: $white;
+
+		&:hover,
+		&:focus {
+			color: $primary;
+		}
+	}
+
+	// Forms
+	.form-input {
+		background-color: $white;
+	}
+
+	// Accordions
+	.accordion-custom-corporate {
+		box-shadow: none;
+	}
+
+	// Boxes
+	.box-minimal-light {
+		color: $gray-110;
+
+		.box-minimal-icon {
+			color: $white;
+		}
+	}
+
+	.box-minimal-border {
+		.box-minimal-text {
+			opacity: .6;
+		}
+	}
+
+	//breadcrumbs
+	.breadcrumbs-custom-path {
+		> li {
+			&.active {
+				color: $white;
+			}
+
+			a {
+				color: $white;
+
+				&:hover {
+					color: rgba( $white, .5 );
+				}
+			}
+		}
+	}
+}
+
+%context-light {
+	color: $body-color;
+
+	#{headings()} {
+		color: $headings-color;
+	}
+}
+
+.context-dark {
+	@extend %context-dark;
+}
+
+.context-light {
+	@extend %context-light;
+}
+
+/**
+* Background White
+*/
+.bg-default {
+	@include bg-behaviour($white);
+
+	.time-line-vertical-element:before,
+	.time-line-vertical-element .unit-body:before {
+		background-color: $white;
+	}
+
+	.twitter-feed {
+		background-color: $gray-100;
+	}
+
+	.slider-widget {
+		background: $gray-100;
+	}
+}
+
+.bg-gray-100 {
+	@include bg-behaviour($gray-100);
+}
+
+/**
+* Background Primary
+*/
+.bg-accent {
+	@extend %context-dark;
+	@include bg-behaviour($primary);
+}
+
+/**
+* Background Images
+*/
+html.desktop {
+	.bg-fixed {
+		@include media-breakpoint-up(lg) {
+			background-attachment: fixed;
+		}
+	}
+}
+
+.bg-image {
+	@extend %context-dark;
+}
+
+[class*='bg-'] {
+	background-size: cover;
+	background-position: center center;
+}
+
+.bg-image-1 {
+	background-image: url('../images/bg-image-fixed.jpg');
+}
+
+.bg-image-2 {
+	background-image: url('../images/bg-02.jpg');
+}
+
+.bg-image-3 {
+	background-image: url('../images/bg-image-default.jpg');
+}
+
+.bg-image-4 {
+	background-image: url('../images/bg-03.jpg');
+}
+
+.bg-image-5 {
+	background-image: url('../images/bg-05.jpg');
+}
+
+.bg-image-6 {
+	background-image: url('../images/bg-07.jpg');
+}
+
+.bg-image-7 {
+	background-image: url('../images/bg-08.jpg');
+}
+
+.bg-image-8 {
+	background-image: url('../images/bg-09.jpg');
+}
+
+.bg-image-9 {
+	background-image: url('../images/home-01-1920x885.jpg');
+}
+
+.bg-image-10 {
+	background-image: url('../images/bg-11.jpg');
+}
+
+.bg-pattern-dark {
+	background-image: url('../images/bg-pattern-dark.jpg');
+	background-repeat: repeat;
+}

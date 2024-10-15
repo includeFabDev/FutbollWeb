@@ -1,0 +1,317 @@
+extends  ../_skeleton
+
+//- Includes
+include ../elements/_ui-thumbnail-modern
+include ../elements/_ui-counter
+include ../elements/_ui-posts
+
+//- Page
+block page
+	//Page Header
+	header.section.page-header.bg-gray-darker.breadcrumbs-custom-wrap( data-preset!={
+		title: 'Intro slider with nav 3',
+		category: 'intro, navigation, slider',
+		reload: true,
+		id: 'intro-slider-with-nav-3'
+	} )
+		.rd-navbar-wrap.rd-navbar-default
+			nav.rd-navbar(
+				data-layout=             'rd-navbar-fixed',
+				data-sm-layout=          'rd-navbar-fixed',
+				data-md-layout=          'rd-navbar-fixed',
+				data-lg-layout=          'rd-navbar-fixed',
+				data-xl-layout=          'rd-navbar-static',
+				data-xxl-layout=         'rd-navbar-static',
+				data-xxxl-layout=        'rd-navbar-static',
+
+				data-lg-device-layout=   'rd-navbar-fixed',
+				data-xl-device-layout=   'rd-navbar-static',
+				data-xxl-device-layout=  'rd-navbar-static',
+				data-xxxl-device-layout= 'rd-navbar-static',
+
+				data-stick-up-offset=      '1px',
+				data-sm-stick-up-offset=   '1px',
+				data-md-stick-up-offset=   '1px',
+				data-lg-stick-up-offset=   '1px',
+				data-xl-stick-up-offset=   '1px',
+				data-xxl-stick-up-offset=  '1px',
+				data-xxx-lstick-up-offset= '1px',
+
+				data-stick-up=           'true'
+			)
+				.rd-navbar-inner.rd-navbar-padding-inner
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							+logo
+
+					.rd-navbar-aside-right
+						.rd-navbar-nav-wrap
+							+navigation( menu )
+						.rd-navbar-aside-right-inner
+							// RD Navbar Search
+							.rd-navbar-search
+								a.rd-navbar-search-toggle(data-rd-navbar-toggle=".rd-navbar-search" href="#")
+									span
+								form.rd-search(action="search-results.html" data-search-live="rd-search-results-live" method="GET")
+									div.form-wrap
+										label.form-label(for="rd-navbar-search-form-input" class="form-label") Search...
+										input(class="rd-navbar-search-form-input form-input" id="rd-navbar-search-form-input" type="text" name="s" autocomplete="off")
+										#rd-search-results-live.rd-search-results-live
+									button.rd-search-form-submit.mdi.mdi-magnify
+
+	section.section.section-header.bg-image.bg-image-9.text-start.novi-bg.novi-bg-img
+		.container
+			h1.fw-bold.header-title Welcome to Learol - Soccer & Football Club
+			p.big.header-subtitle Our club is the #1 place to engage with one of the world’s most popular sports. We are dedicated to promoting the culture of soccer.
+			.group-md.button-group
+				a(href='about-us.html').button.button-primary.button-nina Read more
+
+	// Football scores
+	section.section.section-lg.novi-bg.novi-bg-img.bg-gray-100
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 Football Scores
+					p.custom-title.mt-1 Latest match results
+			.row.row-sm
+				.owl-carousel.owl-layout-6(
+					data-items='1',
+					data-lg-items='2',
+					data-xxl-items='3',
+					data-loop='true',
+					data-margin='40',
+					data-autoplay='false',
+					data-owl!={
+						nav: true
+					}
+				)
+					.score-image.d-flex.align-items-center.justify-content-center
+						+img('chelsea.png')
+						.score
+							.score__info
+								p July 11, 2021
+							.score__score
+								p 2:1
+							.score__info
+								p Premier League
+						+img('nantes.png')
+
+					.score-image.d-flex.align-items-center.justify-content-center
+						+img('barcelona.png')
+						.score
+							.score__info
+								p July 17, 2021
+							.score__score
+								p 1:1
+							.score__info
+								p National Championship
+						+img('leipzig.png')
+
+					.score-image.d-flex.align-items-center.justify-content-center
+						+img('villarreal.png')
+						.score
+							.score__info
+								p July 21, 2021
+							.score__score
+								p 0:1
+							.score__info
+								p European Championship
+						+img('manchester-united.png')
+
+					.score-image.d-flex.align-items-center.justify-content-center
+						+img('chelsea.png')
+						.score
+							.score__info
+								p July 11, 2021
+							.score__score
+								p 2:1
+							.score__info
+								p Premier League
+						+img('nantes.png')
+
+
+	// Awesome & skilled instructors
+	section.section.section-lg.novi-bg.novi-bg-img.bg-default
+		include ../sections/_team
+		.group-md.button-group.text-center
+			a(href='our-team.html').button.button-primary.button-nina View all players
+
+
+	// A few words about
+	section.section.section-lg.novi-bg.novi-bg-img.bg-gray-100
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 Statistics
+					p.custom-title.mt-1 Club numbers
+			.row.row-sm.justify-content-md-between
+				.col-md-5
+					p.club-members__story Our soccer club has a long history of wins and losses since 1995. Take a look at our recent achievement and stats that we’re proud of.
+
+				.col-md-5.mt-4.mt-md-0
+					p.fw-normal From local to international games and championships, our soccer team always searches for new ways to engage players and fans as well as to build the community through a beatiful game. Such an approach allowed us to achieve huge success on the field.
+					.col-12.offset-custom-1
+						.row.row-30.row-xxl-60.text-center.text-md-start
+							.col-6
+								+counter({
+									title: 'League cup games',
+									titleClass: 'heading-5 fw-normal mt-3',
+									dataTo: '234',
+									valueSize: 'heading-2',
+									preffix: '',
+									preffixClass: ''
+								})
+							.col-6
+								+counter({
+									title: 'International games',
+									titleClass: 'heading-5 fw-normal mt-3',
+									dataTo: '105',
+									valueSize: 'heading-2',
+									preffix: '',
+									preffixClass: ''
+								})
+							.col-6
+								+counter({
+									title: 'Registered fans',
+									titleClass: 'heading-5 fw-normal mt-3',
+									dataTo: '2',
+									valueSize: 'heading-2',
+									preffix: 'k+',
+									preffixClass: ''
+								})
+
+
+	//Gallery
+	section.section.section-lg.bg-default.novi-bg.novi-bg-img
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 Gallery
+					p.custom-title.mt-1 Featured team photos
+			.row.row-sm.row-50.row-lg-60( data-isotope-layout='masonry', data-column-class='.col-1', data-lightgallery='group', data-lg-animation='lg-zoom-in' )
+				.col-xs-6.col-lg-5( data-filter='0' )
+					+product({
+						img: 'home-02-500x500',
+						imgOriginal: 'home-02-1200x800',
+					})
+				.col-xs-6.col-lg-5.d-flex.align-items-end( data-filter='1' )
+					+product({
+						img: 'home-03-500x390',
+						imgOriginal: 'home-03-1200x800',
+					})
+				.col-xs-6.col-sm-4.offset-lg-2( data-filter='3' )
+					+product({
+						img: 'home-05-390x600',
+						imgOriginal: 'home-05-800x1200',
+					})
+				.col-xs-6.col-lg-5( data-filter='2' )
+					+product({
+						img: 'home-04-500x500',
+						imgOriginal: 'home-04-1200x800',
+					})
+
+
+	section.section.section-lg.bg-default.novi-bg.novi-bg-img
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 From the blog
+					p.custom-title.mt-1 Latest news
+			.row.row-sm
+				.col-sm-12.col-md-7.wow.fadeInLeft
+					+post-nikki-2({
+						img: 'post-1-720x430',
+						time: {
+							datetime: '2021-11-07',
+							dateText: 'July 11, 2021'
+						},
+						title: 'Liverpool\'s 2021-22 Premier League Expectations',
+						content: 'Off the back of another long and especially tough season, our team is finally able to have a few weeks of rest before re-joining up with the squad for pre-season.'
+					})
+				.col-md-5.mt-5.mt-md-0: .row.row-30
+					.col-6.col-md-12.wow.fadeInRight
+						+post-nikki({
+							unit: 'flex-column flex-md-row',
+							img: 'post-2-170x120',
+							time: {
+								datetime: '2021-11-07',
+								dateText: 'July 11, 2021'
+							},
+							title: 'Sadio Mane Still Makes A Difference'
+						})
+					.col-6.col-md-12.wow.fadeInRight
+						+post-nikki({
+							unit: 'flex-column flex-md-row',
+							img: 'post-3-170x120',
+							time: {
+								datetime: '2021-11-07',
+								dateText: 'July 11, 2021'
+							},
+							title: 'Robertson\'s Decent Debut At European Cup'
+						})
+					.col-6.col-md-12.wow.fadeInRight
+						+post-nikki({
+							unit: 'flex-column flex-md-row',
+							img: 'post-4-170x120',
+							time: {
+								datetime: '2021-11-07',
+								dateText: 'July 11, 2021'
+							},
+							title: 'Raheem Sterling Turns The Tide For Manchester'
+						})
+
+
+	section.section.section-lg.novi-bg.novi-bg-img.bg-gray-100
+		.container
+			.row
+				.col-xl-10
+					h6.custom-subtitle-1 Our Partnerships
+					p.custom-title.mt-1 Our sponsors
+			.row.row-sm.row-30
+				.row
+					.col-6.col-sm-3
+						figure.box-icon-image: a(href='#')
+							+png('company-1-270x74')
+					.col-6.col-sm-3
+						figure.box-icon-image: a(href='#')
+							+png('company-2-260x65')
+					.col-6.col-sm-3.mt-5.mt-sm-0
+						figure.box-icon-image: a(href='#')
+							+png('company-3-270x60')
+					.col-6.col-sm-3.mt-5.mt-sm-0
+						figure.box-icon-image: a(href='#')
+							+png('company-4-270x63')
+					.col-6.col-sm-3.mt-5
+						figure.box-icon-image: a(href='#')
+							+png('company-5-195x57')
+					.col-6.col-sm-3.mt-5
+						figure.box-icon-image: a(href='#')
+							+png('company-6-220x76')
+
+
+	include ../sections/_quotes
+
+	//Subscribe to Our Newsletter
+	+parallax({
+		img: 'parallax-1-1900x1024.png',
+		innerClass: 'section-lg context-dark'
+	}).section
+		.container: .row
+			.col-md-3.text-center.text-xl-start
+				h6.custom-subtitle-1 newsletter
+				p.custom-title.mt-1.text-white Join the club
+			.col-md-8.offset-md-1.mt-4.mt-md-0
+				form.rd-form.rd-mailform.rd-form-inline(data-form-output="form-output-global", data-form-type='subscribe', method='post', action='bat/rd-mailform.php')
+					.form-wrap
+						input.form-input(id="subscribe-form-email" type="email" name="email" data-constraints="@Email @Required")
+						label.form-label(for="subscribe-form-email") Your E-mail
+					.form-button.ms-0
+						button.button.button-primary(type="submit") Subscribe
+
+	// Page Footer
+	include ../sections/_footer

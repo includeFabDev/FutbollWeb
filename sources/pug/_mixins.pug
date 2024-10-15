@@ -1,0 +1,257 @@
+//- Image
+	@param {string} name
+	@param {object} options
+	@param {boolean} options.retina
+mixin img( name, options )
+	-
+		var
+			isExt = /(.jpg|.png|.gif|.svg)$/i.test( name ),
+			isLink = /^(\/\/|http:\/\/|https:\/\/)/.test( name ),
+			size = name.match( /(\d+)x(\d+)/i );
+
+		if ( options && options.retina && size && size.length ) {
+			size[1] = ~~(size[1]/2);
+			size[2] = ~~(size[2]/2);
+		}
+
+		if ( !isLink && !isExt ) {
+			name += '.jpg';
+		}
+
+		if ( !isLink ) {
+			name = 'images/'+ name;
+		}
+
+	img( src= name, alt='', width= size ? size[1] : null, height= size ? size[2] : null, loading='lazy' )&attributes( attributes )
+
+//- Jpg image
+mixin jpg( name )
+	- var size = getImageSize(name);
+	img( src='images/' + name + '.jpg', alt='', width=size[0], height=size[1] )&attributes( attributes )
+
+//- Png image
+mixin png( name )
+	- var size = getImageSize(name);
+	img( src='images/' + name + '.png', alt='', width=size[0], height=size[1] )&attributes( attributes )
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+	block
+
+//- Breadcrumbs
+	@param {Array}  [path] - other navigation path
+	@example +breadcrumbs([ { title:'About Us', link:'about-us.html' }, { title:'Team member' } ])
+mixin breadcrumbs( obj, path )
+	-
+		if ( !path ) {
+			if ( breadcrumbs && breadcrumbs.length ) path = breadcrumbs;
+			else path = [{ title: pageName }];
+		}
+	
+	// Breadcrumbs
+	section.breadcrumbs-custom(class= obj.class ? obj.class : 'breadcrumbs-custom-svg' )&attributes( attributes )
+		.container
+			if( obj.text )
+				p.breadcrumbs-custom-subtitle= obj.text
+			if( obj.title !== false )
+				p.heading-1.breadcrumbs-custom-title= obj.title ? obj.title : path[ path.length - 1 ].title
+			if( obj.smallTitle )
+				p.heading-3.breadcrumbs-custom-title= obj.smallTitle
+			if( obj.author )
+				.box-inline
+					span.icon.novi-icon.icon-md-middle.mdi.mdi-account
+					a(href='#').event-default-link= obj.author
+			if( path[0].title.toLowerCase() !== 'home' )
+				ul.breadcrumbs-custom-path
+					li: a( href='index.html' ) Home
+					- for ( var i = 0; i < path.length; i++ )
+						if ( i === path.length - 1 )
+							li.active= path[i].title
+						else
+							li: a( href= path[i].link )= path[i].title
+	="\n"
+
+//- Breadcrumbs custom
+mixin breadcrumbs-header( obj )
+	.section.page-header.breadcrumbs-custom-wrap.bg-image.bg-image-9
+		+breadcrumbs( obj )
+
+//- Main Navigation
+mixin navigation( menu, type )
+	if( !type )
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				li.rd-nav-item( class= { active: item.active } )
+					a.rd-nav-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+					if( item.megamenu )
+						+navigation( item.megamenu, 'megamenu' )( class= item.class )
+
+	else if( type === 'dropdown' )
+		ul.rd-menu.rd-navbar-dropdown
+			each item in menu
+				li.rd-dropdown-item( class= { active: item.active } )
+					a.rd-dropdown-link( href= item.link )= item.title
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )
+
+	else if( type === 'megamenu' )
+		ul.rd-menu.rd-navbar-megamenu&attributes( attributes )
+			each item in menu
+				li.rd-megamenu-item
+					if ( item instanceof Array )
+						+navigation( item, 'column' )
+					else
+						+navigation( item, 'block' )
+
+	else if( type === 'column' )
+		each item in menu
+			+navigation( item, 'block' )
+
+	else if( type === 'block' )
+		if (menu.title && menu.link)
+			h5.rd-megamenu-header: a( href= menu.link )= menu.title
+		else if (menu.title)
+			h5.rd-megamenu-header= menu.title
+		else if (menu.megamenu_img)
+			+jpg(menu.megamenu_img)
+		if (menu.list)
+			+navigation( menu.list, 'list' )
+
+	else if( type === 'list' )
+		ul.rd-megamenu-list
+			each item in menu
+				li.rd-megamenu-list-item
+					a.rd-megamenu-list-link( href= item.link )= item.title
+
+//- Icon list
+mixin list-inline-icon(obj)
+	ul(class=obj.list_class)
+		each item in obj.items
+			li: a.icon.novi-icon(href='#' class=item)
+
+//- Wave
+mixin wave()
+	.section-wave
+		svg(x='0px', y='0px', width='1920px', height='46px', viewbox='0 0 1920 46' preserveAspectRatio ='none')
+			path(d='M1920,0.5c-82.8,0-109.1,44-192.3,44c-78.8,0-116.2-44-191.7-44c-77.1,0-115.9,44-192,44c-78.2,0-114.6-44-192-44c-78.4,0-115.3,44-192,44c-76.9-0.1-119-44-192-44c-77,0-115.2,44-192,44c-73.6,0-114-44-190.9-44c-78.5,0-117.2,44-194.1,44c-75.9,0-113-44-191-44V46h1920V0.5z')
+
+
+//- Logo
+mixin logo
+	//Brand
+	a.brand-name( href='index.html' )&attributes( attributes )
+		+img( logo.default).logo-default
+		+img( logo.inverse).logo-inverse
+
+//- Copyright
+mixin rights
+	p.rights&attributes( attributes )
+		span &copy;&nbsp;
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span .&nbsp;All Rights Reserved.&nbsp;
+
+//- Box small
+mixin box-small( data )
+	.box-small&attributes( attributes )
+		h5.box-small-title= data.title
+		.box-small-text= data.text
+
+//- Box project
+mixin box-project( data )
+	.box-project.box-width-3&attributes( attributes )
+		.box-project-media
+			+img( data.img ).box-project-img
+		.box-project-subtitle.small= data.subtitle
+		h6.box-project-title: a( href='single-course.html' )= data.title
+		.box-project-meta
+			.box-project-meta-item
+				span.box-project-meta-icon.linearicons-clock3
+				span.box-project-meta-text= data.time
+			.box-project-meta-item
+				span.box-project-meta-icon.linearicons-credit-card
+				span.box-project-meta-text= data.price
+
+//- Product
+	@param {object} data - data object
+mixin product( data )
+	// Blurb
+	.product&attributes( attributes )
+		a.product-media( data-lightgallery='item', href='images/' + data.imgOriginal + '.jpg' ): +img( data.img ).product-img
+
+//- List border
+mixin list-border( data )
+	.list-border&attributes( attributes )
+		h4.list-border-title= data.title
+		each item in data.list
+			.list-border-item= item
+
+//- Team default
+mixin team-default( data )
+	.swiper-slide
+		.team-default.box-width-3&attributes( attributes )
+			.team-default-media
+				+img( data.img ).team-default-img
+			h6.team-default-title: a( href='single-page.html' )= data.title
+			.team-default-meta= data.meta
+			.team-default-number.d-none.d-xl-block= data.number
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.parallax-container( data-parallax-img= procImg(obj.img) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+//- Quote boxed 2
+mixin quote-boxed-2( data )
+	.quote-boxed-2&attributes( attributes )
+		.quote-boxed-2-body
+			.quote-boxed-2-text.h5= data.text
+		.quote-boxed-2-media
+			+img( data.img ).quote-boxed-2-img
+			.d-block
+				.quote-boxed-2-cite= data.name
+				.quote-boxed-2-position= data.position
+
+
+//- Table
+mixin table(classes, modClasses)
+	.table-novi.table-custom-responsive(class=modClasses)
+		table.table-custom(class=classes)
+			thead
+				tr
+					th #
+					th First Name
+					th Last Name
+					th Username
+
+			tbody
+				tr
+					td 1
+					td Benjamin
+					td Turner
+					td @benjaminturner
+				tr
+					td 2
+					td Lauren
+					td Wood
+					td @laurenwood
+				tr
+					td 3
+					td Bryan
+					td Vargas
+					td @benjaminturner
+
+				tr
+					td 4
+					td Arthur
+					td Henderson
+					td @benjaminturner

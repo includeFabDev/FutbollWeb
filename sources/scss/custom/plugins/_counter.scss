@@ -1,0 +1,44 @@
+/** @section Counter */
+
+.counter-wrap {
+  font-size: 24px;
+
+  .icon {
+    font-size: 28px;
+    color: $dark;
+  }
+
+  * + p {
+    margin-top: 0;
+  }
+
+  .icon + * {
+    margin-top: 8px;
+  }
+
+  .counter-value {
+    font-weight: 700;
+    color: $primary;
+  }
+}
+
+// Medium < 768px
+@include media-breakpoint-down(sm) {
+  .col-md-3 {
+    .counter {
+      &-wrap {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .counter {
+    &-wrap {
+      .icon {
+        font-size: 32px;
+      }
+    }
+  }
+}

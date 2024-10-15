@@ -1,0 +1,7 @@
+mixin thumbnail-classic(obj)
+	.thumbnail-classic.unit.flex-column(class=obj.modClass ? obj.modClass : '')
+		.unit-left: .thumbnail-classic-icon
+			span.icon.novi-icon(class=obj.icon_class)=obj.icon_text
+		.thumbnail-classic-caption.unit-body
+			h6.thumbnail-classic-title=obj.title
+			p.thumbnail-classic-text=obj.text

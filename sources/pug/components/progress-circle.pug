@@ -1,0 +1,14 @@
+//- Circle progress bar
+	@param {object} data
+	@param {string} data.title
+	@param {number} data.value
+mixin progress-circle( data )
+	//Circle progress bar
+	.progress-circle&attributes( attributes )
+		.progress-circle-block
+			svg.progress-circle-bar( x='0', y='0', width='140', height='140', viewbox='0 0 140 140' )
+				circle.progress-circle-bg( cx=70, cy=70, r=67 )
+				circle.progress-circle-fg.clipped( cx=70, cy=70, r=67 )
+			.progress-circle-counter( class= data.valueClass ? data.valueClass : '' )= data.value
+		if (data.title)
+			.heading-5.progress-circle-title= data.title

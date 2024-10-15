@@ -1,0 +1,169 @@
+/** @section Footers */
+
+p.rights {
+	letter-spacing: $spacing-sm;
+	
+	margin-top: 65px;
+	font-size: 14px;
+
+	a {
+		&, &:focus, &:active {
+			color: inherit;
+		}
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+}
+
+* + p.rights {
+	margin-top: 40px;
+}
+
+@include media-breakpoint-up(md) {
+	* + p.rights {
+		margin-top: 50px;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	* + p.rights {
+		margin-top: 90px;
+	}
+}
+
+// Footer simple
+.footer-simple {
+	padding: 50px 0;
+	font-weight: 400;
+	//background-color: $dark;
+	//@extend %context-dark;
+
+	.list-marked {
+		font-weight: 500;
+	}
+}
+
+@include media-breakpoint-up( md ) {
+	.footer-simple {
+		padding: 70px 0;
+	}
+}
+
+@include media-breakpoint-up( xxl ) {
+	.footer-simple {
+		padding: 132px 0;
+	}
+}
+
+
+
+
+
+
+/** @section Footers */
+
+// Footer Classic
+.footer-classic {
+	padding: 60px 0;
+	background: $white;
+	
+	.footer-phone {
+		font-size: 20px;
+		color: $primary;
+		font-weight: 700;
+		
+		&:hover {
+			color: $secondary;
+		}
+	}
+	
+	@include media-breakpoint-up(xl) {
+		.footer-phone {
+			font-size: 28px;
+		}
+	}
+	
+	.footer-title {
+		font-size: 18px;
+		font-weight: 700;
+	}
+	
+	.footer-list-icon {
+		display: block;
+		
+		li {
+			display: inline-block;
+		}
+		
+		.icon {
+			font-size: 24px;
+			color: $gray-110;
+			
+		}
+		.mdi-youtube-play:hover {
+			color: red;
+		}
+		
+		.mdi-facebook:hover {
+			color: #2879fe;
+		}
+		
+		.mdi-instagram:hover {
+			color: #de7272;
+		}
+		
+		.mdi-twitter:hover {
+			color: #81cbdb;
+		}
+		
+		.mdi-linkedin:hover {
+			color: #2879fe;
+		}
+	}
+	
+	.footer-street {
+		font-size: 20px;
+		color: $gray-500;
+	}
+	
+	.list-footer {
+		font-size: 18px;
+		
+		a {
+			color: $gray-800;
+			font-weight: 700;
+			
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	section.footer-classic {
+		&:first-of-type {
+			padding-top: 40px;
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.footer-classic {
+		padding: 90px 0;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.footer-classic {
+		padding: 100px 0;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.footer-classic {
+		padding: 150px 0;
+	}
+}

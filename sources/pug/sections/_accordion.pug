@@ -1,0 +1,30 @@
+//- Includes
+include ../elements/_ui-accordion
+
+mixin accordion-corporate(obj)
+	// Bootstrap collapse
+	.accordion-custom-group.accordion-custom-group-custom.accordion-custom-group-corporate( id= obj.accordionId, role='tablist', aria-multiselectable='false' )
+		+accordion-item({
+			show:     true,
+			parentId: obj.accordionId,
+			title:    'How can I change something in my order?'
+		}).accordion-custom-corporate
+			p If you need to change something in your order, please contact us immediately. We usually process orders within 30 minutes, and once we have processed your order, we will be unable to make any changes.
+		
+		+accordion-item({
+			parentId: obj.accordionId,
+			title:    'How can I pay for my order?'
+		}).accordion-custom-corporate
+			p We accept Visa, MasterCard, and American Express credit and debit cards for your convenience.
+		
+		+accordion-item({
+			parentId: obj.accordionId,
+			title:    'How long will my order take to be delivered?'
+		}).accordion-custom-corporate
+			p Delivery times will depend on your location. Once payment is confirmed your order will be packaged. Delivery can be expected within a day.
+		
+		+accordion-item({
+			parentId: obj.accordionId,
+			title:    'Can I track my order?'
+		}).accordion-custom-corporate
+			p Yes, you can! After placing your order you will receive an order confirmation via email. Each order starts production 24 hours after your order is placed. Within 72 hours of you placing your order, you will receive an expected delivery date.

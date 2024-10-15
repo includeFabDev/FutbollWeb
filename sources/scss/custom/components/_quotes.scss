@@ -1,0 +1,205 @@
+/** @section Quotes */
+
+/**
+* Quote primary
+*/
+.quote-primary {
+  text-align: left;
+
+  .cite { color: $primary; }
+}
+
+.quote-primary-text {
+  font-style: italic;
+  font-size: 18px;
+  line-height: (28 / 18);
+}
+
+.quote-primary-mark {
+  position: relative;
+  top: 6px;
+  display: block;
+  width: 37px;
+  height: 27px;
+  fill: $primary;
+  flex-shrink: 0;
+}
+
+.quote-primary-meta {
+  margin-left: -.2em;
+  color: $gray-300;
+  * { padding: 0 .2em; }
+}
+
+* + .quote-primary-text { margin-top: 20px; }
+
+* + .quote-primary-meta { margin-top: 15px; }
+
+@include media-breakpoint-up(md) {
+  .quote-primary-text {
+    font-size: 20px;
+  }
+
+  * + .quote-primary-text { margin-top: 30px; }
+  * + .quote-primary-meta { margin-top: 20px; }
+}
+
+@include media-breakpoint-up(xl) {
+  .quote-primary-text {
+    font-size: 24px;
+    line-height: (34 / 24);
+  }
+}
+
+/**
+* Quote minimal
+*/
+.quote-minimal {
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+.quote-minimal-text {
+  font-size: 18px;
+  font-style: italic;
+  color: $gray-700;
+}
+
+@include media-breakpoint-up(md) {
+  .quote-minimal {
+    max-width: 90%;
+  }
+  .quote-minimal-text {
+    font-size: 24px;
+  }
+}
+
+/**
+* Quote boxed 2
+*/
+.quote-boxed-2 {
+  padding: 30px 40px;
+  background-color: $white;
+  transition: .7s ease;
+  margin-bottom: 38px;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+  &:hover {
+  position: relative;
+  //max-width: 610px;
+  //margin-left: auto;
+  //margin-right: auto;
+  box-shadow: 0 28px 34px rgba(41, 48, 67, 0.05);
+  //margin-bottom: 38px;
+  }
+}
+
+.quote-boxed-2-img {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.quote-boxed-2-body {
+  margin-top: 25px;
+}
+
+.quote-boxed-2-text {
+  color: $dark;
+  font-weight: 400;
+  
+  //&:first-letter {
+  //  font-size: 60px;
+  //  color: $primary;
+  //}
+  
+  &:before {
+    content: '“';
+    top: 0;
+    left: 0;
+    font-size: 60px;
+    color: $primary;
+  }
+}
+
+.quote-boxed-2-cite {
+  font-size: 18px;
+  font-weight: 700;
+  color: $primary;
+}
+
+.quote-boxed-2-position {
+  font-size: 16px;
+  color: $gray-110;
+}
+
+* + .quote-boxed-2-text { margin-top: 12px * $lg-multiplier }
+//* + .quote-boxed-2-cite { margin-top: 21px * $lg-multiplier }
+
+@include media-breakpoint-up( sm ) {
+  .quote-boxed-2 {
+    display: block;
+  }
+
+  .quote-boxed-2-media {
+    flex-shrink: 0;
+    //margin-left: 34px;
+    margin-top: 30px;
+    display: flex;
+  }
+
+  .quote-boxed-2-body {
+    flex-grow: 1;
+    margin-top: 0;
+    //margin-left: 34px;
+  }
+}
+
+@include media-breakpoint-up( lg ) {
+  .quote-boxed-2 {
+    padding: 50px;
+  }
+
+  * + .quote-boxed-2-text { margin-top: 12px }
+  //* + .quote-boxed-2-cite { margin-top: 21px }
+}
+
+.score-image {
+  img {
+    max-width: 25%;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    img{
+      max-width: 100%;
+    }
+  }
+}
+
+.score {
+  text-align: center;
+  
+  .score__info {
+    font-size: 14px;
+  }
+  
+  .score__score {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 35px;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    .score__score {
+      font-size: 40px;
+      margin: 10px 65px;
+    }
+  }
+}
+
+.club-members__story {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+

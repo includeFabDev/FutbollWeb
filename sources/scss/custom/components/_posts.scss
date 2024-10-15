@@ -1,0 +1,110 @@
+//
+// Post Nikki
+//
+
+.post-nikki {
+	position: relative;
+	text-align: center;
+}
+
+.post-nikki-2 {
+	
+	.post-nikki-title {
+		
+		a:hover { color: $secondary; }
+	}
+	
+	.post-nikki-time {
+		margin-top: 20px;
+		* {
+			font-size: 18px !important;
+		}
+	}
+	
+	.post-nikki-content {
+		margin-top: 20px;
+	}
+}
+
+.post-nikki-figure {
+	display: block;
+	overflow: hidden;
+	
+	img {
+		width: 100%;
+		transform: none;
+		will-change: transform;
+		transition: all .2s ease;
+	}
+}
+
+
+.post-nikki-title {
+	font-size: 16px;
+	line-height: $h5-line-height;
+	color: $primary;
+	
+	a { @include link(inherit, $secondary) }
+}
+
+.post-nikki-title {
+	font-weight: 700;
+	letter-spacing: .05em;
+}
+
+* + .post-nikki-title { margin-top: 8px; }
+
+// Medium ≥768px
+@include media-breakpoint-up(md) {
+	
+	.post-nikki {
+		text-align: left;
+		
+		.unit {
+			.post-nikki-figure { width: 150px; }
+		}
+	}
+	
+	//.post-nikki-body { padding: 30px; }
+}
+
+// Large ≥992px
+@include media-breakpoint-up(lg) {
+	
+	.post-nikki {
+		.unit {
+			.post-nikki-figure { width: 210px; }
+		}
+	}
+	
+	.post-nikki-title { font-size: 22px; }
+	
+	* + .post-nikki-title { margin-top: 14px; }
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	
+	.post-nikki {
+		.unit {
+			.post-nikki-figure { width: auto; }
+		}
+	}
+	
+	//.post-nikki-body { padding: 12% 10%; }
+	
+	.post-nikki-title { font-size: $h5-font-size; }
+}
+
+.desktop {
+	// Large ≥992px
+	@include media-breakpoint-up(lg) {
+		
+		.post-nikki:hover {
+			
+			.post-nikki-figure {
+				img { transform: scale(1.05); }
+			}
+		}
+	}
+}

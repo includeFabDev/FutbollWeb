@@ -1,0 +1,12 @@
+//- title - counter title
+//- titleAttr - counter title classes
+//- counter - {counter} Object
+
+mixin counter( data )
+	.counter-wrap
+		div.counter-value(class= data.valueSize)
+			span.counter(class= data.counterClass data-speed= data.dataSpeed)= data.dataTo
+			if data.preffix != null
+				span.counter-preffix(class= data.preffixClass)= data.preffix
+		if data.title != null
+			p(class= data.titleClass)!= data.title

@@ -1,0 +1,43 @@
+// Success stories from our students
+section.section.section-lg.novi-bg.novi-bg-img
+	.container
+		.row
+			.col-xl-10
+				h6.custom-subtitle-1 Testimonials
+				p.custom-title.mt-1 What club members say
+		.row.row-sm
+			.owl-carousel.owl-layout-6(
+				data-items='1',
+				data-lg-items='2',
+				data-loop='true',
+				data-margin='40',
+				data-autoplay='true',
+				data-owl!={
+					nav: false,
+					dots: true
+				}
+			)
+				+quote-boxed-2({
+					img: 'home-14-60x60',
+					text: 'I strongly recommend Learol to everyone interested in quality soccer. They have everything necessary for proper soccer training.”',
+					name: 'Darrell Steward',
+					position: 'Club member'
+				})
+				+quote-boxed-2({
+					img: 'home-15-60x60',
+					text: 'The coaches at Learol know how to properly treat their club members. They also teach you various ways of improving your technique.”',
+					name: 'Devon Lane',
+					position: 'Club member'
+				})
+				+quote-boxed-2({
+					img: 'home-16-60x60',
+					text: 'Learol is by far the best soccer club in the area. Whether you’re a professional player or not, you’ll find what you need in this club.”',
+					name: 'James Wilson',
+					position: 'Club member'
+				})
+				+quote-boxed-2({
+					img: 'home-19-60x60',
+					text: 'This club is one of my #1 recommendations when it comes to quality soccer training. At Learol, there is any kind of football gear you can think of.”',
+					name: 'Peter Adams',
+					position: 'Club member'
+				})

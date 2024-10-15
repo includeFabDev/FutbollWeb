@@ -1,0 +1,426 @@
+/** @section Offsets */
+
+// Element offset
+* + p {
+	margin-top: 15px;
+}
+
+p + p {
+	margin-top: 12px;
+}
+
+* + figcaption {
+	margin-top: 10px;
+}
+
+* + h6, * + .heading-6 {
+	margin-top: 20px;
+}
+
+// Headings
+
+// Headings + Paragraph
+h1 + p, .heading-1 + p {
+	margin-top: 20px;
+}
+
+h2 + p, .heading-2 + p {
+	margin-top: 20px;
+}
+
+h3 + p, .heading-3 + p {
+	margin-top: 15px;
+}
+
+h4 + p, .heading-4 + p {
+	margin-top: 9px;
+}
+
+h5 + p, .heading-5 + p {
+	margin-top: 20px;
+}
+
+h1 + h3 {
+	margin-top: 10px;
+}
+
+.heading-5 + h3 {
+	margin-top: 5px;
+	@include media-breakpoint-up(xxl) {
+		margin-top: 23px;
+	}
+}
+
+* + .list-xxs {
+	margin-top: 20px;
+}
+
+* + .list-ordered {
+	margin-top: 20px;
+}
+
+h6 + p, .heading-6 + p {
+	margin-top: 12px;
+}
+
+// Tags + Classes
+p + .list-marked {
+	margin-top: 10px;
+}
+
+p + p + .list-marked {
+	margin-top: 20px;
+}
+
+p + .button {
+	margin-top: 25px;
+}
+
+h3 + .section {
+	margin-top: 40px;
+}
+
+h3 + .row {
+	margin-top: 43px;
+}
+
+.divider + p {
+	margin-top: 10px;
+}
+
+// Classes
+* + .list-xs {
+	margin-top: 25px;
+}
+
+* + .list-marked {
+	margin-top: 13px;
+}
+
+* + .list-terms {
+	margin-top: 30px;
+}
+
+* + .button {
+	margin-top: 20px;
+}
+
+* + .figure-light {
+	margin-top: 20px;
+}
+
+* + .group-xs {
+	margin-top: 25px;
+}
+
+.container + .button {
+	margin-top: 50px;
+}
+
+* + .rd-mailform {
+	margin-top: 30px;
+}
+
+* + .quote-primary {
+	margin-top: 25px;
+}
+
+* + .quote-minimal {
+	margin-top: 25px;
+}
+
+.quote-minimal + * {
+	margin-top: 25px;
+}
+
+* + .group-md {
+	margin-top: 25px;
+}
+
+
+* + .owl-carousel {
+	margin-top: 40px;
+}
+
+* + .divider-thin {
+	margin-top: 13px;
+}
+
+* + .box-inline {
+	margin-top: 25px;
+}
+
+* + .privacy-link {
+	margin-top: 30px;
+}
+
+* + [class^='custom-wrap'] {
+	margin-top: 40px;
+}
+
+h2 + .divider, .heading-2 + .divider {
+	margin-top: 10px;
+}
+
+.big + form {
+	margin-top: 20px;
+}
+
+// Classes + Classes
+.container + .container {
+	margin-top: 60px;
+}
+
+.row + .row {
+	margin-top: 60px;
+}
+
+.row + .row-sm {
+	margin-top: 35px;
+}
+
+.divider-thin + .box-inline {
+	margin-top: 15px;
+}
+
+.divider-thin + .box-inline-wrap {
+	margin-top: 15px;
+}
+
+.page {
+	* + .offset-custom-1 {
+		margin-top: 20px;
+	}
+	* + .offset-custom-4 {
+		margin-top: 10px;
+	}
+}
+
+// Media offsets
+@include media-breakpoint-up(md) {
+	* + figcaption {
+		margin-top: 20px;
+	}
+	* + hr {
+		margin-top: 30px;
+	}
+	* + .group-md {
+		margin-top: 35px;
+	}
+	* + .owl-carousel {
+		margin-top: 70px;
+	}
+	* + .list-terms {
+		margin-top: 45px;
+	}
+	* + .button {
+		margin-top: 35px;
+	}
+	* + .quote-primary {
+		margin-top: 35px;
+	}
+	.custom-subtitle + * {
+		margin-top: 25px;
+	}
+	h3 + .section {
+		margin-top: 40px;
+	}
+	hr + .row {
+		margin-top: 40px;
+	}
+	h2 + .divider,
+	.heading-2 + .divider {
+		margin-top: 25px;
+	}
+	.big + .button {
+		margin-top: 30px;
+	}
+	.page {
+		* + .offset-custom-1 {
+			margin-top: 40px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	* + hr {
+		margin-top: 40px;
+	}
+	h1 + p, .heading-1 + p {
+		margin-top: 30px;
+	}
+	h2 + p, .heading-2 + p {
+		margin-top: 33px;
+	}
+	h3 + .row {
+		margin-top: 43px;
+	}
+	* + .list-xxs {
+		margin-top: 30px;
+	}
+	h6 + p, .heading-6 + p {
+		margin-top: 20px;
+	}
+	h2 + .divider, .heading-2 + .divider {
+		margin-top: 35px;
+	}
+	.divider-thin + .box-inline {
+		margin-top: 30px;
+	}
+	* + .figure-light {
+		margin-top: 40px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	* + .list-xs {
+		margin-top: 40px;
+	}
+	* + .group-md {
+		margin-top: 60px;
+	}
+	p + p + .list-marked {
+		margin-top: 30px;
+	}
+	.divider + p {
+		margin-top: 18px;
+	}
+	.owl-carousel + .button {
+		margin-top: 50px;
+	}
+	.row + .button {
+		margin-top: 50px;
+	}
+	h3 + p,
+	.heading-3 + p {
+		margin-top: 15px;
+	}
+	h3 + .big,
+	.heading-3 + .big {
+		margin-top: 12px;
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.divider + p {
+		margin-top: 40px;
+	}
+	hr + .big {
+		margin-top: 40px;
+	}
+
+	h1 + p,
+	.heading-1 + p {
+		margin-top: 20px;
+	}
+
+	h3 + .section {
+		margin-top: 60px;
+	}
+	h3 + .row {
+		margin-top: 43px;
+	}
+	h1 + h3 {
+		margin-top: 0;
+	}
+	hr + .row {
+		margin-top: 85px;
+	}
+	.owl-carousel + .button {
+		margin-top: 90px;
+	}
+	.row + .button {
+		margin-top: 80px;
+	}
+	.big + .button {
+		margin-top: 50px;
+	}
+}
+
+.inset-md {
+	@include media-breakpoint-up(xxl) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+// Range spacing
+.row-0 {
+	@include grid-offset(0);
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-40 {
+	@include grid-offset(40px);
+}
+
+.row-50 {
+	@include grid-offset(50px);
+}
+
+.row-70 {
+	@include grid-offset(50px);
+}
+
+.row-100 {
+	@include grid-offset(100px);
+}
+
+.row-120 {
+	@include grid-offset(50px);
+}
+
+.desktop {
+	.row-100 {
+		@include grid-offset(30px);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.row-60 {
+		@include grid-offset(60px);
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.row-lg-50 {
+		@include grid-offset(50px);
+	}
+	.row-90 {
+		@include grid-offset(90px);
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.row-70 {
+		@include grid-offset(70px);
+	}
+	.row-120 {
+		@include grid-offset(80px);
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.row-70 {
+		@include grid-offset(70px);
+	}
+	.row-xxl-60 {
+		@include grid-offset(60px);
+	}
+	.page {
+		* + .row-xxl-90 {
+			margin-top: 90px;
+		}
+	}
+
+	.row-120 {
+		@include grid-offset(120px);
+	}
+}
