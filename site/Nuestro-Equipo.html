@@ -35,12 +35,38 @@
             <div class="rd-navbar-inner">
               <!-- RD Navbar Panel-->
               <div class="rd-navbar-panel">
-                <!-- RD Navbar Toggle-->
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                <!-- RD Navbar Brand-->
-                <div class="rd-navbar-brand">
-                  <!--Brand--><a class="brand-name" href="index.html"><img class="logo-default" src="images/logo-default-172x36.png" alt="" width="172" height="36" loading="lazy"/><img class="logo-inverse" src="images/logo-inverse-172x36.png" alt="" width="172" height="36" loading="lazy"/></a>
-                </div>
+            <!-- RD Navbar Toggle-->
+<button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap">
+  <span></span>
+</button>                
+
+<!-- RD Navbar Brand-->
+<div class="rd-navbar-brand">
+  <a class="brand-name" href="index.html" style="display: block; text-align: center;">
+     <img class="logo-default" src="images/logo1.svg" alt="" 
+          style="max-width: 80px; height: auto;" loading="lazy" />
+     <img class="logo-inverse" src="images/logo1.svg" alt="" 
+          style="max-width: 80px; height: auto;" loading="lazy" />
+  </a>
+</div>
+
+<!-- Script para ajustar padding solo en móviles -->
+<script>
+  function adjustLogoPadding() {
+      var navbarBrand = document.querySelector('.rd-navbar-brand');
+      if (window.innerWidth <= 768) {
+          navbarBrand.style.paddingTop = '50px';  // Agregar padding en móviles
+      } else {
+          navbarBrand.style.paddingTop = '0';    // Quitar padding en pantallas más grandes
+      }
+  }
+
+  // Ejecutar al cargar la página
+  adjustLogoPadding();
+
+  // Ejecutar cada vez que se cambia el tamaño de la ventana
+  window.addEventListener('resize', adjustLogoPadding);
+</script>
               </div>
               <div class="rd-navbar-nav-wrap">
                 <ul class="rd-navbar-nav">
@@ -101,11 +127,11 @@
         <!-- Breadcrumbs-->
         <section class="breadcrumbs-custom breadcrumbs-custom-svg">
           <div class="container">
-            <p class="breadcrumbs-custom-subtitle">Our team</p>
-            <p class="heading-1 breadcrumbs-custom-title">Our team</p>
+            <p class="breadcrumbs-custom-subtitle">Nuestro Equipo</p>
+            <p class="heading-1 breadcrumbs-custom-title">Nuestro Equipo</p>
             <ul class="breadcrumbs-custom-path">
-              <li><a href="index.html">Home</a></li>
-              <li class="active">Our team</li>
+              <li><a href="index.html">Inicio</a></li>
+              <li class="active">Nuestro Equipo</li>
             </ul>
           </div>
         </section>
