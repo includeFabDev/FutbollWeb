@@ -51,6 +51,7 @@
  *   48 Search Results
  */
 /** @section Page layout */
+
 .page {
 	position: relative;
 	overflow: hidden;
@@ -668,8 +669,8 @@ img {
 * Background Primary
 */
 .bg-accent {
-	background-color: #39546C;
-	fill: #39546C;
+	background-color: #000000; /*BOTON DEL FONDO DE HISTORIA Y LASD EMAS PAGINAS EN JOIN A TEAM*/
+	fill: #000000;
 }
 
 .bg-accent .way-point > svg {
@@ -681,7 +682,7 @@ img {
 }
 
 .bg-accent .bg-decoration > svg {
-	fill: #39546C;
+	fill: #000000;  /*FONDO DONDE SE ENCUENTRA JOIN A TEAM*/
 }
 
 /**
@@ -9721,7 +9722,7 @@ html:not(.lt-ie10) .not-animated {
 	top: 0;
 	right: 0;
 	z-index: 1080;
-	background: #ffffff;
+	background: #000000; /*AQUI SE ENCUENTRA EL SEGUNDO COLOR DEL BACKGROUND DEL NAVBAR PQUE CAMBIA EL COLOR A LAS OTRAS PAGINAS*/
 }
 
 .rd-navbar-static.rd-navbar--is-stuck .rd-navbar-top-panel, .rd-navbar-static.rd-navbar--is-clone .rd-navbar-top-panel,
@@ -9742,7 +9743,7 @@ html:not(.lt-ie10) .not-animated {
 	font-size: 16px;
 	line-height: 34px;
 	color: #333333;
-	background: #ffffff;
+	background: #000000;
 	box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.25);
 	z-index: 998;
 }
@@ -10004,7 +10005,8 @@ html:not(.lt-ie10) .not-animated {
 	bottom: 0;
 	right: 0;
 	box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.25);
-	background: #ffffff;
+	background: #000000;  /* fCOLOR DEL NAVBAR EN VISTA DE TELEFONONOPS CELULARES BARRA SUPERIOR */
+
 }
 
 .rd-navbar-fixed .rd-navbar-panel > * {
@@ -10166,8 +10168,8 @@ html:not(.lt-ie10) .not-animated {
 	left: 0;
 	bottom: 0;
 	top: 0;
-	color: #333333;
-	background: #ffffff;
+	color: #ffffff;
+	background: #000000; /*AGUSTA EL FONDO DEL FONDO EN VISTA DE MOVILES DE MOVILES*/
 	transform: translateX(-120%);
 }
 
@@ -10199,8 +10201,8 @@ html:not(.lt-ie10) .not-animated {
 }
 
 .rd-navbar-fixed .rd-navbar-nav li:hover > a, .rd-navbar-fixed .rd-navbar-nav li.active > a, .rd-navbar-fixed .rd-navbar-nav li.opened > a {
-	background: #39546C;
-	color: #ffffff;
+	background: #000000; /*EL COLOR DE LOS CUADROS DENTRO DEL NAVBAR INDIVIDUALMETE VISTA EN TELEFONOS MOVILES*/
+	color: #ff0000; /*CAMBIA EL COLOR DE LAS LRTRAS DEL NAVBAR VISTA EN DISPOSITIVOS MOVILES*/
 }
 
 .rd-navbar-fixed .rd-navbar-nav li:hover > .rd-navbar-submenu-toggle, .rd-navbar-fixed .rd-navbar-nav li.active > .rd-navbar-submenu-toggle, .rd-navbar-fixed .rd-navbar-nav li.opened > .rd-navbar-submenu-toggle {
@@ -10272,7 +10274,7 @@ html:not(.lt-ie10) .not-animated {
 	padding: 15px 20px;
 	width: 280px;
 	border-radius: 3px;
-	background-color: #ffffff;
+	background-color: #000000;
 	box-shadow: 0 6px 8px rgba(45, 45, 45, 0.05);
 	text-align: left;
 	font-size: 14px;
@@ -10640,7 +10642,7 @@ html.rd-navbar-fixed-linked .page {
 	left: 0;
 	content: "";
 	display: inline-block;
-	background: #39546C;
+	background: #000000; /*CAMBIA EL COLOR DIRECTAMENTE DE TODO EL NAVBARR*/
 	transition: 450ms ease-out;
 	opacity: 0;
 }
