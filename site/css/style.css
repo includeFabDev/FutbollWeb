@@ -750,7 +750,7 @@ img {
 * Box small
 */
 .box-small-title {
-	color: #39546C;
+	color: #445565;
 }
 
 * + .box-small-text {
@@ -776,7 +776,7 @@ img {
 .box-project-subtitle {
 	font-weight: 600;
 	text-transform: uppercase;
-	color: #39546C;
+	color: #3c4a57;
 }
 
 .box-project-meta {
@@ -806,7 +806,7 @@ img {
 .box-project-meta-icon {
 	margin-right: 7px;
 	font-size: 1.5em;
-	color: #39546C;
+	color: #4a5865;
 }
 
 .box-project-meta-icon::before {
@@ -863,11 +863,11 @@ img {
 .box-minimal .box-minimal-icon {
 	font-size: 30px;
 	line-height: 1;
-	color: #39546C;
+	color: #43505c;
 }
 
 .box-minimal-icon svg {
-	fill: #39546C;
+	fill: #44515d;
 }
 
 .box-minimal-title {
@@ -1024,7 +1024,7 @@ img {
 }
 
 .box-inline a:hover {
-	color: #39546C;
+	color: #45515d;
 }
 
 .box-inline > * {
@@ -1043,7 +1043,7 @@ img {
 }
 
 .box-inline-gray a:hover {
-	color: #39546C;
+	color: #3f4a53;
 }
 
 .box-icon-image {
@@ -1091,7 +1091,7 @@ img {
 }
 
 .breadcrumbs-custom-path a:hover {
-	color: #39546C;
+	color: #444d55;
 }
 
 .breadcrumbs-custom-path li {
@@ -1288,8 +1288,8 @@ img {
 
 .button-default:hover, .button-default:active, .button-default:hover {
 	color: #ffffff;
-	background-color: #39546C;
-	border-color: #39546C;
+	background-color: #374550;
+	border-color: #3e4a55;
 }
 
 .button-dark, .button-dark:focus {
@@ -1300,8 +1300,8 @@ img {
 
 .button-dark:hover, .button-dark:active, .button-dark:hover {
 	color: #ffffff;
-	background-color: #39546C;
-	border-color: #39546C;
+	background-color: #374149;
+	border-color: #2d3943;
 }
 
 .bg-accent .button-dark, .bg-accent .button-dark:focus {
@@ -1318,8 +1318,8 @@ img {
 
 .button-primary, .button-primary:focus {
 	color: #ffffff;
-	background-color: #39546C;
-	border-color: #39546C;
+	background-color: #465059;
+	border-color: #3f474d;
 }
 
 .button-primary:hover, .button-primary:active, .button-primary:hover {
@@ -3979,9 +3979,9 @@ a[href*='tel'], a[href*='mailto'] {
 }
 
 .team-default-number {
-	font-size: 70px;
+	font-size: 40px;
 	font-weight: 900;
-	color: #39546C;
+	color: #3f464d;
 	position: absolute;
 	right: 0;
 	bottom: -15px;
@@ -4010,13 +4010,13 @@ a[href*='tel'], a[href*='mailto'] {
 }
 
 .team-default-icon:hover {
-	color: #39546C;
+	color: #49535c;
 }
 
 .team-default-title {
 	font-size: 22px;
 	font-weight: 700;
-	color: #39546C;
+	color: #535b62;
 }
 
 .team-default-title:hover a {
