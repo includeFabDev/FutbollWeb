@@ -78,7 +78,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contacto</a>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="contacto.html">Contacto</a>
                   </li>
                 </ul>
               </div>
@@ -120,38 +120,72 @@
           <div class="row row-70 row-ten row-fix justify-content-xl-between">
             <div class="col-xl-3">
               <div class="row row-70 row-fix align-items-md-center">
-                <div class="col-md-6 col-xl-12"><img src="images/team-member-1-420x420.jpg" alt="" width="420" height="420"/>
+                <div class="col-md-6 col-xl-12"><img src="images/jug10Pablo.png" alt="" width="420" height="420"/>
                 </div>
                 <div class="col-md-6 col-xl-12 text-md-start">
                   <h6>Contáctenos</h6>
-                  <!-- RD Mailform-->
-                  <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                  <!-- WhatsApp Form -->
+                  <form id="whatsapp-form">
                     <div class="row row-20 row-fix">
                       <div class="col-md-12">
                         <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-name">First name</label>
-                          <input class="form-input" id="form-1-name" type="text" name="name" data-constraints="@Required">
+                          <label class="form-label-outside" for="form-whatsapp-name">Nombre</label>
+                          <input class="form-input" id="form-whatsapp-name" type="text" name="name" required>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-email">E-mail</label>
-                          <input class="form-input" id="form-1-email" type="email" name="email" data-constraints="@Email @Required">
+                          <label class="form-label-outside" for="form-whatsapp-phone">Teléfono</label>
+                          <input class="form-input" id="form-whatsapp-phone" type="tel" name="phone" required>
                         </div>
                       </div>
                       <div class="col-sm-12">
                         <div class="form-wrap form-wrap-validation">
-                          <label class="form-label-outside" for="form-1-message">Message</label>
-                          <textarea class="form-input" id="form-1-message" name="message" data-constraints="@Required"></textarea>
+                          <label class="form-label-outside" for="form-whatsapp-message">Mensaje</label>
+                          <textarea class="form-input" id="form-whatsapp-message" name="message" required></textarea>
                         </div>
                       </div>
                       <div class="col-sm-12 offset-custom-4">
                         <div class="form-button">
-                          <button class="button button-primary button-nina" type="submit">Send message</button>
+                          <button class="button button-primary button-nina" type="button" onclick="sendWhatsAppMessage()">Enviar mensaje</button>
                         </div>
                       </div>
                     </div>
                   </form>
+
+                  <!-- Confirmation Message -->
+                  <div id="confirmation-message" style="display:none; color: green; margin-top: 10px;">
+                    ¡Tu mensaje ha sido enviado exitosamente!
+                  </div>
+
+                  <script>
+                    function sendWhatsAppMessage() {
+                      // Obtener valores del formulario
+                      const name = document.getElementById("form-whatsapp-name").value;
+                      const phone = document.getElementById("form-whatsapp-phone").value;
+                      const message = document.getElementById("form-whatsapp-message").value;
+
+                      if (name && phone && message) {
+                        // Crear el enlace de WhatsApp
+                        const whatsappURL = `https://wa.me/<+59168954003>?text=${encodeURIComponent(
+                          `Hola, mi nombre es ${name}. Mi teléfono es ${phone}. Estoy interesado en la Academia: ${message}`
+                        )}`;
+
+                        // Abrir el enlace de WhatsApp
+                        window.open(whatsappURL, "https://wa.me/<+59168954003>?text=");
+
+                        // Mostrar mensaje de confirmación
+                        document.getElementById("confirmation-message").style.display = "block";
+
+                        // Limpiar el formulario
+                        document.getElementById("whatsapp-form").reset();
+                      } else {
+                        alert("Por favor, complete todos los campos antes de enviar.");
+                      }
+                    }
+                  </script>
+
+                  
                 </div>
               </div>
             </div>
@@ -171,7 +205,7 @@
                             <circle class="progress-circle-bg" cx="70" cy="70" r="67"></circle>
                             <circle class="progress-circle-fg clipped" cx="70" cy="70" r="67"></circle>
                           </svg>
-                          <div class="progress-circle-counter radial">75</div>
+                          <div class="progress-circle-counter radial">79</div>
                         </div>
                         <div class="heading-5 progress-circle-title">Pase</div>
                       </div>
@@ -184,7 +218,7 @@
                             <circle class="progress-circle-bg" cx="70" cy="70" r="67"></circle>
                             <circle class="progress-circle-fg clipped" cx="70" cy="70" r="67"></circle>
                           </svg>
-                          <div class="progress-circle-counter radial">50</div>
+                          <div class="progress-circle-counter radial">93</div>
                         </div>
                         <div class="heading-5 progress-circle-title">Disparo</div>
                       </div>
@@ -197,7 +231,7 @@
                             <circle class="progress-circle-bg" cx="70" cy="70" r="67"></circle>
                             <circle class="progress-circle-fg clipped" cx="70" cy="70" r="67"></circle>
                           </svg>
-                          <div class="progress-circle-counter radial">69</div>
+                          <div class="progress-circle-counter radial">85</div>
                         </div>
                         <div class="heading-5 progress-circle-title">Control de Balón</div>
                       </div>
@@ -262,13 +296,13 @@
           <div class="container">
             <div class="row row-50 justify-content-sm-center justify-content-md-start justify-content-lg-between">
               <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="footer-title">Contact Us:</div><a class="footer-phone text-darker mt-5" href="tel:#">P: +1 234 567 8901</a>
-                <div class="footer-title mt-3">Opening hours:</div>
-                <p class="footer-street mt-1">9 to 5 pm on Weekdays</p>
+                <div class="footer-title">Contáctanos:</div><a class="footer-phone text-darker mt-5" href="tel:#">Phone: +591 65214110 </a>
+                <div class="footer-title mt-3">Horario de Atención:</div>
+                <p class="footer-street mt-1">8 am - 23 pm de Lunes a Viernes</p>
               </div>
               <div class="col-sm-6 offset-md-2 offset-lg-3">
-                <div class="footer-title">Our Address:</div>
-                <p class="footer-street mt-1">178 West 27th Street, Suite 527, New York NY 10012</p>
+                <div class="footer-title">Nuestra Dirección:</div>
+                <p class="footer-street mt-1">Cancha Villa Vecinal</p>
                 <ul class="footer-list-icon mt-5">
                   <li class="me-3"><a class="icon mdi mdi-youtube-play" href="#"></a></li>
                   <li class="me-3"><a class="icon mdi mdi-facebook" href="#"></a></li>
@@ -278,7 +312,7 @@
                 </ul>
               </div>
               <div class="col-12">
-                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Learol</span><span>.&nbsp;All Rights Reserved.&nbsp;</span></p>
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>&nbsp;</span><span>Fútbol Club Gran Moxos</span><span>.&nbsp;Todos los derechos reservados.&nbsp;</span></p>
               </div>
             </div>
           </div>
